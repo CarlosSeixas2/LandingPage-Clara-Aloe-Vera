@@ -1,6 +1,8 @@
 import { PackageSearch } from "lucide-react";
 import WhatsappIcon from "/public/whatsapp.svg";
 
+import imagemInicial from "../../public/item_fundo.png";
+
 export default function InicialPage() {
   return (
     <section
@@ -41,7 +43,7 @@ export default function InicialPage() {
       <div>
         <img
           className="w-full h-[480px] object-contain"
-          src="/public/item_fundo.png"
+          src={imagemInicial}
           alt="Produtos Forever"
         />
       </div>

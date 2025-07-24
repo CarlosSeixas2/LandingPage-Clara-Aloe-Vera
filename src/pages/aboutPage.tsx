@@ -1,3 +1,5 @@
+import revendedoraImage from "../../public/revendedora.jpg";
+
 export default function AboutPage() {
   return (
     <section
@@ -7,7 +9,7 @@ export default function AboutPage() {
       <div className="flex-shrink-0">
         <img
           className="h-[480px] object-cover rounded-2xl shadow-2xl"
-          src="/public/revendedora.jpg"
+          src={revendedoraImage}
           alt="Revendedora"
         />
       </div>

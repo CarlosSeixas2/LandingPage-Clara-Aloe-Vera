@@ -7,6 +7,8 @@ import {
   Phone,
 } from "lucide-react";
 
+import logoImage from "../../public/logo_forever.png";
+
 interface NavItemProps {
   href: string;
   icon?: React.ReactNode;
@@ -44,7 +46,7 @@ export default function Header() {
         <a href="#inicio">
           <img
             className="h-10 mx-auto object-cover"
-            src="/public/logo_forever.png"
+            src={logoImage}
             alt="Logo Forever Aloe Vera"
           />
         </a>
