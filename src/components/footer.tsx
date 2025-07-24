@@ -1,5 +1,7 @@
 import { MessageCircle, Mail, MapPin, Phone } from "lucide-react";
 
+import logoImage from "../../public/logo_forever.png";
+
 export default function Footer() {
   return (
     <footer className="w-full bg-[#1d1c1c] backdrop-blur-lg text-white">
@@ -9,7 +11,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <img
                 className="h-14"
-                src="/public/logo_forever.png"
+                src={logoImage}
                 alt="Logo Forever Aloe Vera"
               />
             </div>
