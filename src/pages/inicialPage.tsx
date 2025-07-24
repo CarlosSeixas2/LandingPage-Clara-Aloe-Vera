@@ -7,7 +7,7 @@ export default function InicialPage() {
   return (
     <section
       id="inicio"
-      className="mt-24 w-full max-w-7xl flex justify-between items-center px-10 py-20"
+      className="mt-24 w-full max-w-7xl flex flex-col-reverse md:flex-row items-center justify-between gap-12 px-6 md:px-10 py-20"
     >
       <div className="max-w-xl space-y-6">
         <h1 className="text-5xl font-extrabold leading-tight text-gray-900">
@@ -20,7 +20,7 @@ export default function InicialPage() {
           bem-estar do seu corpo.
         </p>
 
-        <div className="flex gap-4 pt-4">
+        <div className="gap-4 pt-4 flex flex-col md:flex-row w-56">
           <a
             href="#produtos"
             className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-green-700 transition-all duration-300"

@@ -5,7 +5,10 @@ import {
   MessageSquareQuote,
   LogIn,
   Phone,
+  Menu,
+  X,
 } from "lucide-react";
+import { useState } from "react";
 
 import logoImage from "../../public/logo_forever.png";
 
@@ -28,10 +31,11 @@ export function NavItem({ href, icon, label }: NavItemProps) {
 }
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
-    <header className="fixed m-4 px-6 py-2 bg-[#1d1c1c]/65 backdrop-blur-lg rounded-full flex justify-between items-center w-full max-w-6xl h-14 shadow-xl">
-      {/* Menu Esquerdo */}
-      <nav className="flex items-center justify-evenly w-2/5">
+    <header className="fixed z-50 m-4 px-6 py-2 bg-[#1d1c1c]/65 backdrop-blur-lg rounded-full flex justify-between items-center w-full max-w-6xl h-14 shadow-xl">
+      <nav className="hidden md:flex items-center justify-evenly w-2/5">
         <NavItem href="#inicio" icon={<House size={20} />} label="Início" />
         <NavItem
           href="#produtos"
@@ -41,7 +45,6 @@ export default function Header() {
         <NavItem href="#sobre" icon={<User size={20} />} label="Sobre Mim" />
       </nav>
 
-      {/* Logo */}
       <div className="flex items-center justify-center w-1/5">
         <a href="#inicio">
           <img
@@ -52,21 +55,51 @@ export default function Header() {
         </a>
       </div>
 
-      {/* Menu Direito */}
-      <nav className="flex items-center justify-evenly w-2/5">
+      <nav className="hidden md:flex items-center justify-evenly w-2/5">
         <NavItem
           href="#depoimentos"
           icon={<MessageSquareQuote size={20} />}
           label="Depoimentos"
         />
         <NavItem href="#contato" icon={<Phone size={20} />} label="Contato" />
-
         <NavItem
           href="https://wa.me/55SEUNUMERO?text=Olá!%20Tenho%20interesse%20nos%20produtos%20Forever."
           icon={<LogIn size={20} />}
           label="Log in"
         />
       </nav>
+
+      {/* Botão Mobile (hambúrguer) */}
+      <button
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        className="md:hidden text-white"
+      >
+        {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+      </button>
+
+      {/* Menu Mobile */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-20 left-4 right-4 bg-[#1d1c1c]/90 backdrop-blur-lg rounded-2xl p-6 flex flex-col gap-4 md:hidden shadow-xl">
+          <NavItem href="#inicio" icon={<House size={20} />} label="Início" />
+          <NavItem
+            href="#produtos"
+            icon={<PackageSearch size={20} />}
+            label="Produtos"
+          />
+          <NavItem href="#sobre" icon={<User size={20} />} label="Sobre Mim" />
+          <NavItem
+            href="#depoimentos"
+            icon={<MessageSquareQuote size={20} />}
+            label="Depoimentos"
+          />
+          <NavItem href="#contato" icon={<Phone size={20} />} label="Contato" />
+          <NavItem
+            href="https://wa.me/55SEUNUMERO?text=Olá!%20Tenho%20interesse%20nos%20produtos%20Forever."
+            icon={<LogIn size={20} />}
+            label="Log in"
+          />
+        </div>
+      )}
     </header>
   );
 }
