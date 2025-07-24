@@ -34,7 +34,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed z-50 m-4 px-6 py-2 bg-[#1d1c1c]/65 backdrop-blur-lg rounded-full flex justify-between items-center w-full max-w-6xl h-14 shadow-xl">
+    <header className="fixed z-50 m-4 px-6 py-2 md:bg-[#1d1c1c]/65 md:backdrop-blur-lg bg-transparent rounded-full flex justify-between items-center w-full max-w-6xl h-14">
       <nav className="hidden md:flex items-center justify-evenly w-2/5">
         <NavItem href="#inicio" icon={<House size={20} />} label="Início" />
         <NavItem
@@ -45,7 +45,7 @@ export default function Header() {
         <NavItem href="#sobre" icon={<User size={20} />} label="Sobre Mim" />
       </nav>
 
-      <div className="flex items-center justify-center w-1/5">
+      <div className="hidden md:flex items-center justify-center w-1/5">
         <a href="#inicio">
           <img
             className="h-10 mx-auto object-cover"
@@ -72,7 +72,7 @@ export default function Header() {
       {/* Botão Mobile (hambúrguer) */}
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="md:hidden text-white"
+        className="md:hidden text-black"
       >
         {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
