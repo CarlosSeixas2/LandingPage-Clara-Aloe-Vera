@@ -20,7 +20,7 @@ export default function InicialPage() {
           bem-estar do seu corpo.
         </p>
 
-        <div className="gap-4 pt-4 flex flex-col md:flex-row w-56">
+        <div className="gap-4 pt-4 flex flex-col md:flex-row w-full md:w-auto">
           <a
             href="#produtos"
             className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-green-700 transition-all duration-300"
