@@ -38,7 +38,7 @@ export default function Header() {
       <nav className="hidden md:flex items-center justify-evenly w-2/5">
         <NavItem href="#inicio" icon={<House size={20} />} label="Início" />
         <NavItem
-          href="#produtos"
+          href="/produtos"
           icon={<PackageSearch size={20} />}
           label="Produtos"
         />
@@ -62,11 +62,7 @@ export default function Header() {
           label="Depoimentos"
         />
         <NavItem href="#contato" icon={<Phone size={20} />} label="Contato" />
-        <NavItem
-          href="https://wa.me/55SEUNUMERO?text=Olá!%20Tenho%20interesse%20nos%20produtos%20Forever."
-          icon={<LogIn size={20} />}
-          label="Log in"
-        />
+        <NavItem href="#login" icon={<LogIn size={20} />} label="Log in" />
       </nav>
 
       {/* Botão Mobile (hambúrguer) */}

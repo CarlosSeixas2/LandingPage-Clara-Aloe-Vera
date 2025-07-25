@@ -1,18 +1,15 @@
-import Footer from "./components/footer";
-import Header from "./components/header";
-import AboutPage from "./pages/aboutPage";
+import DefaultLayout from "./layout/defaultLayout";
 import InicialPage from "./pages/inicialPage";
+import { Routes, Route } from "react-router";
 
 export default function App() {
   return (
-    <div className="bg-gradient-to-b from-[#f4f1ee] to-[#a3c9a8] min-h-screen flex flex-col items-center">
-      <Header />
+    <Routes>
+      <Route element={<DefaultLayout />}>
+        <Route index path="/" element={<InicialPage />} />
+      </Route>
 
-      <InicialPage />
-
-      <AboutPage />
-
-      <Footer />
-    </div>
+      <Route path="*" element={<h1>404 - Not Found</h1>} />
+    </Routes>
   );
 }

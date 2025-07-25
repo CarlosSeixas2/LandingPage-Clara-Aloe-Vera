@@ -15,7 +15,7 @@ export default function AboutPage() {
       </div>
 
       <div className="flex-1 flex flex-col justify-center max-w-xl">
-        <h1 className="text-center text-4xl md:text-5xl font-extrabold text-gray-900 mb-8">
+        <h1 className="text-center text-3xl md:text-4xl font-bold mb-6">
           Sobre Mim
         </h1>
 
